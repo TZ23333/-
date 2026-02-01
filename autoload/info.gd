@@ -3,10 +3,10 @@ extends Node
 var infosDic:Dictionary
 var file_path = "res://Asset/Cardinfos.csv"
 var current_deck:Array[String] = [
-	"happy_1","happy_2",
-	"angry_1","angry_2",
-	"sad_1","sad_2",
-	"scare_1","scare_2"
+	"happy_1","happy_2","happy_3",
+	"angry_1","angry_2","angry_3",
+	"sad_1","sad_2","sad_3",
+	"scare_1","scare_2","scare_3"
 ]
 # 运行时卡牌实例存储
 var card_instances: Dictionary = {}  # instance_id -> 卡牌实例字典

@@ -5486,6 +5486,18 @@ theme_override_font_sizes/font_size = 8
 text = "3"
 horizontal_alignment = 1
 
+[node name="Control" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control2" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control3" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control4" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
 [node name="Button2" type="Button" parent="background/player"]
 visible = false
 layout_mode = 0
@@ -5553,18 +5565,6 @@ offset_bottom = -38.0
 theme_override_fonts/font = ExtResource("10_82xsv")
 theme_override_font_sizes/font_size = 10
 text = "重开"
-
-[node name="Control" parent="background/player" instance=ExtResource("11_d13ii")]
-layout_mode = 1
-
-[node name="Control2" parent="background/player" instance=ExtResource("11_d13ii")]
-layout_mode = 1
-
-[node name="Control3" parent="background/player" instance=ExtResource("11_d13ii")]
-layout_mode = 1
-
-[node name="Control4" parent="background/player" instance=ExtResource("11_d13ii")]
-layout_mode = 1
 
 [node name="pllllayer" parent="background" instance=ExtResource("7_5vw27")]
 
@@ -5677,8 +5677,8 @@ shape = SubResource("RectangleShape2D_cegan")
 visible = false
 offset_left = 447.0
 offset_top = 2.0
-offset_right = 678.0
-offset_bottom = 88.0
+offset_right = 681.0
+offset_bottom = 181.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_82xsv")
 theme_override_font_sizes/normal_font_size = 55
@@ -5689,30 +5689,30 @@ scale = Vector2(0.439201, 0.485411)
 texture = ExtResource("21_ryguw")
 
 [node name="新手教程2" type="RichTextLabel" parent="Camera2D/PanelContainer/CanvasLayer"]
-offset_left = 10.0
-offset_top = 199.0
-offset_right = 436.0
-offset_bottom = 716.0
+offset_left = 13.0
+offset_top = 172.0
+offset_right = 439.0
+offset_bottom = 689.0
 text = "图例解释：
 	黄星下：当前回合所处的情绪状态
 	对勾：对应当前所处回合下，能够使用类型为竖表头的牌
 	红叉：对应当前会回合下，不能使用类型为竖表头的牌。
 
 游戏规则：
-每个移动力仅能移动1格。每回合开始时抽2张牌，小x能获得2点移动力，大x获得3点。出牌规则如右图所示。
+每个移动力仅能移动1格。每回合开始时抽2张牌，小x能获得1点移动力，中x获得2点，大x获得3点。出牌规则如右图所示。
 走过的格子将被涂上当前所处情绪对应的颜色，已经被涂上颜色的格子不会再被涂抹。颜色有如下作用：
-喜，绿色：移动到上方时，抽两张牌。
+喜，绿色：移动到上方时，抽1张牌。
 怒，红色：无法通过
 哀，蓝色：移动到上方时，失去两点行动力。
-惧，紫色：
+惧，紫色：移动到上方时，随机弃置一张牌。
 
-连续打出两张相同类型的牌时，抽1张牌。
+连续打出两张相同类型的牌时，抽1张牌。（三张牌抽1张）
 
-牌堆共有8张牌，只有在新回合开始时且牌堆无牌时，才会将弃牌堆吸入牌堆。
+牌堆共有12张牌，手牌上限8张只有在新回合开始时且牌堆无牌时，才会将弃牌堆吸入牌堆。
 "
 
 [node name="情绪状态" type="Sprite2D" parent="Camera2D/PanelContainer/CanvasLayer"]
-position = Vector2(441.085, 129.635)
+position = Vector2(385.8, 129.635)
 scale = Vector2(0.195, 0.195)
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/PanelContainer"]
@@ -5739,6 +5739,7 @@ text = "开始游戏"
 stream = SubResource("AudioStreamRandomizer_ryguw")
 
 [connection signal="happy_trigger" from="background/TileMapLayer" to="Camera2D/PanelContainer/CanvasLayer/Card manager" method="_on_tile_map_layer_happy_trigger"]
+[connection signal="scare_trigger" from="background/TileMapLayer" to="Camera2D/PanelContainer/CanvasLayer/Card manager" method="_on_tile_map_layer_scare_trigger"]
 [connection signal="button_up" from="background/player/Button2" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_2_button_up"]
 [connection signal="button_up" from="background/player/Button3" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_3_button_up"]
 [connection signal="button_up" from="background/player/Button4" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_4_button_up"]
@@ -5747,6 +5748,7 @@ stream = SubResource("AudioStreamRandomizer_ryguw")
 [connection signal="button_down" from="background/player/Test2" to="background/TileMapLayer" method="_on_test_2_button_down"]
 [connection signal="button_down" from="background/player/Reset" to="." method="_on_reset_button_down"]
 [connection signal="gui_input" from="Camera2D/PanelContainer/CanvasLayer/Label" to="Camera2D/PanelContainer/CanvasLayer" method="_on_label_gui_input"]
+[connection signal="card_played_1" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_1"]
 [connection signal="card_played_2" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_2"]
 [connection signal="card_played_3" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_3"]
 [connection signal="button_up" from="Camera2D/Button" to="." method="_on_button_button_up"]

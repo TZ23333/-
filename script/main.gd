@@ -17,6 +17,7 @@ extends Node2D
 @onready var control_4: Control = $background/player/Control4
 @onready var control_3: Control = $background/player/Control3
 @onready var canvas_layer: CanvasLayer = $Camera2D/PanelContainer/CanvasLayer
+@onready var 情绪状态: Sprite2D = $Camera2D/PanelContainer/CanvasLayer/情绪状态
 
 signal moveing(usedcell : Array[Vector2i],chik : InputEvent)
 signal talk(chik : InputEvent)
@@ -36,7 +37,7 @@ func _ready() -> void:
 	test_1.visible = false
 	test_2.visible = false
 	doomtime.visible = false
-	
+	情绪状态.visible = false
 	for cell in tile_map_layer.get_used_cells():
 		if tile_map_layer.get_cell_tile_data(cell).get_custom_data("able"):
 			Used_Cell.append(cell)
@@ -85,6 +86,10 @@ func _process(delta: float) -> void:
 		
 	if $Camera2D/PanelContainer/CanvasLayer.ui_time == false and Infos.vectory_sign == 5:
 		play_ending_new()
+	if Infos.doom_time <= 0:
+		doomtime.text = "游戏结束！"
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://main.tscn")
 		
 func play_ending_new():
 	$background/player.remove_child(camera_2d)
@@ -103,6 +108,7 @@ func _on_button_button_up() -> void:
 	$background.show()
 	handzone.visible = true
 	doomtime.visible = true
+	情绪状态.visible = true
 	bgm.play()
 	pass # Replace with function body.
 

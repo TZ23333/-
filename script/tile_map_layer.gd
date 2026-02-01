@@ -124,7 +124,7 @@ func check_tile_effect(cell_position:Vector2i):
 			2:
 				mos -= 2
 			3:
-				replace_tile_before(2,scare_tile_coords_b)
+				scare_trigger.emit()
 			4:
 				happy_trigger.emit()
 		
@@ -155,6 +155,10 @@ func _on_card_manager_card_played_3() -> void:
 	mos += 3
 	pass # Replace with function body.
 
+
+func _on_card_manager_card_played_1() -> void:
+	mos += 1
+	pass # Replace with function body.
 
 func _on_test_1_button_down() -> void:
 	move_distance += 1

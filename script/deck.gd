@@ -5,6 +5,7 @@ signal card_drawn(card)
 signal card_discarded(card)
 signal deck_shuffled
 signal hand_updated
+signal card_played_1
 signal card_played_2
 signal card_played_3
 
@@ -120,10 +121,12 @@ func _process(delta: float) -> void:
 				hand_instance_ids.erase(c)
 				remove_card_visual(c)
 				Infos.is_card_discarded = false
-				if c.instance_id%2 == 1:
+				if c.instance_id%3 == 2:
 					card_played_2.emit()
-				else:
+				elif c.instance_id%3 == 0:
 					card_played_3.emit()
+				else:
+					card_played_1.emit()
 	pass
 
 #判断是否对偶
@@ -135,9 +138,9 @@ func is_double(c:card)-> void:
 		second_discard = c.card_type
 		is_first = true
 	if first_discard == second_discard:
-		draw_card(2)
-		first_discard == null
-		second_discard == null
+		draw_card(1)
+		first_discard = ""
+		second_discard = ""
 		is_first = true
 		Infos.is_turn_end = false
 
@@ -160,6 +163,8 @@ func shuffle_deck():
 
 #抽牌
 func draw_card(count:int = 1)->bool:
+	if handcard.size() > 7:
+		return false
 	if deckcard.is_empty():
 		print("牌库为空")
 		if Infos.is_turn_end == true:
@@ -264,5 +269,16 @@ func get_card_instance(instance_id:int) -> card:
 
 func _on_tile_map_layer_happy_trigger() -> void:
 	Infos.is_turn_end = false
-	draw_card(2)
+	draw_card(1)
+	pass # Replace with function body.
+
+
+func _on_tile_map_layer_scare_trigger() -> void:
+	var cards = card_poidesk.get_children()
+	var randi = randi_range(0,cards.size())
+	var ran:int = 0
+	for i in cards:
+		if ran == randi:
+			i.queue_free()
+		ran+=1
 	pass # Replace with function body.

@@ -19,7 +19,6 @@ var DILOGS : Resource
 @onready var control_2: Control = $"../../../background/player/Control2"
 @onready var control_3: Control = $"../../../background/player/Control3"
 @onready var control_4: Control = $"../../../background/player/Control4"
-@onready var doomtime: RichTextLabel = $Doomtime
 
 
 # Called when the node enters the scene tree for the first time.
@@ -116,10 +115,8 @@ func _process(delta: float) -> void:
 	doomtime.text = "剩余回合：" + str(Infos.doom_time)
 	if ui_time:
 		$CardZones.hide()
-		$Doomtime.hide()
 	else :
 		$CardZones.show()
-		$Doomtime.show()
 	if ui_time == false and Infos.vectory_sign == 4:
 		play_ending()
 

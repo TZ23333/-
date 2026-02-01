@@ -57,11 +57,12 @@ func start_new_turn():
 	print("第",current_turn,"回合开始")
 	Infos.is_turn_end = true
 	#抽两张牌
-	if card_manager.draw_card(2):
-		#显示抽到的卡牌
-		var last_index = card_manager.hand_instance_ids.size() -1
-		var instance_id = card_manager.hand_instance_ids[last_index]
-		card_display.initialize_from_instance(instance_id)
+	for i in range(2):
+		if card_manager.draw_card(1):
+			#显示抽到的卡牌
+			var last_index = card_manager.hand_instance_ids.size() -1
+			var instance_id = card_manager.hand_instance_ids[last_index]
+			card_display.initialize_from_instance(instance_id)
 		
 	await get_tree().create_timer(0.5).timeout
 	update_ui()
