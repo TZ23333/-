@@ -5556,16 +5556,6 @@ offset_right = 467.0
 offset_bottom = -3.0
 text = "距离-1"
 
-[node name="Reset" type="Button" parent="background/player"]
-layout_mode = 0
-offset_left = -111.0
-offset_top = -60.0
-offset_right = -82.0
-offset_bottom = -38.0
-theme_override_fonts/font = ExtResource("10_82xsv")
-theme_override_font_sizes/font_size = 10
-text = "重开"
-
 [node name="pllllayer" parent="background" instance=ExtResource("7_5vw27")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -5689,14 +5679,16 @@ scale = Vector2(0.439201, 0.485411)
 texture = ExtResource("21_ryguw")
 
 [node name="新手教程2" type="RichTextLabel" parent="Camera2D/PanelContainer/CanvasLayer"]
-offset_left = 13.0
-offset_top = 172.0
-offset_right = 439.0
-offset_bottom = 689.0
+offset_left = 15.0
+offset_top = 61.0
+offset_right = 441.0
+offset_bottom = 642.0
 text = "图例解释：
-	黄星下：当前回合所处的情绪状态
+	黄星下：当前回合所处的情绪状态,每回合轮换
 	对勾：对应当前所处回合下，能够使用类型为竖表头的牌
 	红叉：对应当前会回合下，不能使用类型为竖表头的牌。
+
+用鼠标点击移动，用“N”键结束回合并开启下一回合，按“R”重置。
 
 游戏规则：
 每个移动力仅能移动1格。每回合开始时抽2张牌，小x能获得1点移动力，中x获得2点，大x获得3点。出牌规则如右图所示。
@@ -5746,7 +5738,6 @@ stream = SubResource("AudioStreamRandomizer_ryguw")
 [connection signal="button_up" from="background/player/Button5" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_5_button_up"]
 [connection signal="button_down" from="background/player/Test1" to="background/TileMapLayer" method="_on_test_1_button_down"]
 [connection signal="button_down" from="background/player/Test2" to="background/TileMapLayer" method="_on_test_2_button_down"]
-[connection signal="button_down" from="background/player/Reset" to="." method="_on_reset_button_down"]
 [connection signal="gui_input" from="Camera2D/PanelContainer/CanvasLayer/Label" to="Camera2D/PanelContainer/CanvasLayer" method="_on_label_gui_input"]
 [connection signal="card_played_1" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_1"]
 [connection signal="card_played_2" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_2"]

@@ -90,6 +90,9 @@ func _process(delta: float) -> void:
 		doomtime.text = "游戏结束！"
 		await get_tree().create_timer(2.0).timeout
 		get_tree().change_scene_to_file("res://main.tscn")
+	
+	if Input.is_action_just_pressed("重置"):
+		get_tree().change_scene_to_file("res://main.tscn")
 		
 func play_ending_new():
 	$background/player.remove_child(camera_2d)
@@ -110,11 +113,6 @@ func _on_button_button_up() -> void:
 	doomtime.visible = true
 	情绪状态.visible = true
 	bgm.play()
-	pass # Replace with function body.
-
-
-func _on_reset_button_down() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
 	pass # Replace with function body.
 
 
