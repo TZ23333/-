@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://baey5bptilsbk"]
+[gd_scene load_steps=37 format=4 uid="uid://baey5bptilsbk"]
 
 [ext_resource type="Texture2D" uid="uid://b7cuj376xlgv1" path="res://spring/精灵-0001.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://jshacseimr2x" path="res://script/main.gd" id="1_lquwl"]
@@ -14,12 +14,15 @@
 [ext_resource type="AudioStream" uid="uid://b810skkdxhhjs" path="res://Sound/Video Project.mp3" id="8_cegan"]
 [ext_resource type="FontFile" uid="uid://dum2nmp6raca3" path="res://fusion-pixel-12px-monospaced-zh_hans.ttf" id="10_82xsv"]
 [ext_resource type="PackedScene" uid="uid://i0kvnbs0v2yb" path="res://scene/game_manager.tscn" id="10_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://y6wwe6tdcij6" path="res://scene/direction.tscn" id="11_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bd3yjo5qc286p" path="res://scene/card_display_manager.tscn" id="11_w48qg"]
 [ext_resource type="PackedScene" uid="uid://cqndaspwwt2eh" path="res://scene/card_manager.tscn" id="12_vivmo"]
 [ext_resource type="Script" uid="uid://c4fgkyn50hxr2" path="res://script/CardDisplayManager.gd" id="12_w48qg"]
 [ext_resource type="PackedScene" uid="uid://c76ioqtiby73b" path="res://scene/carddesk.tscn" id="13_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://gkbsm0w5fqj6" path="res://scene/card.tscn" id="14_vivmo"]
 [ext_resource type="PackedScene" uid="uid://co4rc7ow3qqs8" path="res://scene/emotional.tscn" id="16_2cqfq"]
+[ext_resource type="AudioStream" uid="uid://c2lubypy2kjyv" path="res://Sound/Maestro 1c.mp3" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://b3i0gfi741bux" path="res://新手教程.png" id="21_ryguw"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_lquwl"]
 tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 0, 131072, 131072, 0, 196608, 131072, 0, 262144, 131072, 0, 327680, 65536, 0, 393216, 65536, 0, 458752, 131072, 0, 524288, 131072, 0, 589824, 131072, 0, 655360, 131072, 0, 720896, 131072, 0, 786432, 131072, 0, 851968, 65536, 0, 917504, 65536, 0, 983040, 65536, 0, 1048576, 131072, 0, 1114112, 131072, 0, 1179648, 131072, 0, 1245184, 131072, 0, 1310720, 131072, 0, 1376256, 131072, 0, 1441792, 131072, 0, 1507328, 131072, 0, 1572864, 131072, 0, 1638400, 131072, 0, 1, 131072, 0, 65537, 131072, 0, 131073, 131072, 0, 196609, 65536, 0, 262145, 65536, 0, 327681, 0, 0, 393217, 0, 0, 458753, 65536, 0, 524289, 131072, 0, 589825, 131072, 0, 655361, 65536, 0, 720897, 65536, 0, 786433, 65536, 0, 851969, 0, 0, 917505, 0, 0, 983041, 0, 0, 1048577, 65536, 0, 1114113, 65536, 0, 1179649, 131072, 0, 1245185, 131072, 0, 1310721, 131072, 0, 1376257, 131072, 0, 1441793, 131072, 0, 1507329, 131072, 0, 1572865, 131072, 0, 1638401, 131072, 0, 2, 131072, 0, 65538, 131072, 0, 131074, 65536, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 65536, 0, 589826, 65536, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 1048578, 0, 0, 1114114, 0, 0, 1179650, 65536, 0, 1245186, 131072, 0, 1310722, 131072, 0, 1376258, 131072, 0, 1441794, 131072, 0, 1507330, 131072, 0, 1572866, 131072, 0, 1638402, 131072, 0, 3, 131072, 0, 65539, 131072, 0, 131075, 65536, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 131072, 0, 720899, 131072, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 983043, 0, 0, 1048579, 0, 0, 1114115, 0, 0, 1179651, 0, 0, 1245187, 65536, 0, 1310723, 131072, 0, 1376259, 131072, 0, 1441795, 131072, 0, 1507331, 131072, 0, 1572867, 131072, 0, 1638403, 131072, 0, 4, 131072, 0, 65540, 131072, 0, 131076, 131072, 0, 196612, 65536, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 131072, 0, 720900, 131072, 0, 786436, 131072, 0, 851972, 0, 0, 917508, 0, 0, 983044, 0, 0, 1048580, 0, 0, 1114116, 0, 0, 1179652, 0, 0, 1245188, 0, 0, 1310724, 65536, 0, 1376260, 131072, 0, 1441796, 131072, 0, 1507332, 131072, 0, 1572868, 131072, 0, 1638404, 131072, 0, 5, 131072, 0, 65541, 131072, 0, 131077, 131072, 0, 196613, 65536, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 131072, 0, 720901, 131072, 0, 786437, 131072, 0, 851973, 131072, 0, 917509, 0, 0, 983045, 0, 0, 1048581, 0, 0, 1114117, 0, 0, 1179653, 0, 0, 1245189, 0, 0, 1310725, 0, 0, 1376261, 65536, 0, 1441797, 131072, 0, 1507333, 131072, 0, 1572869, 131072, 0, 1638405, 131072, 0, 6, 131072, 0, 65542, 131072, 0, 131078, 131072, 0, 196614, 131072, 0, 262150, 65536, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 131072, 0, 786438, 131072, 0, 851974, 131072, 0, 917510, 0, 0, 983046, 0, 0, 1048582, 0, 0, 1114118, 0, 0, 1179654, 0, 0, 1245190, 0, 0, 1310726, 0, 0, 1376262, 65536, 0, 1441798, 131072, 0, 1507334, 131072, 0, 1572870, 131072, 0, 1638406, 131072, 0, 7, 131072, 0, 65543, 131072, 0, 131079, 131072, 0, 196615, 131072, 0, 262151, 65536, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 131072, 0, 851975, 131072, 0, 917511, 131072, 0, 983047, 0, 0, 1048583, 0, 0, 1114119, 0, 0, 1179655, 0, 0, 1245191, 0, 0, 1310727, 0, 0, 1376263, 65536, 0, 1441799, 131072, 0, 1507335, 131072, 0, 1572871, 131072, 0, 1638407, 131072, 0, 8, 131072, 0, 65544, 131072, 0, 131080, 131072, 0, 196616, 131072, 0, 262152, 131072, 0, 327688, 65536, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 917512, 0, 0, 983048, 0, 0, 1048584, 0, 0, 1114120, 0, 0, 1179656, 0, 0, 1245192, 0, 0, 1310728, 65536, 0, 1376264, 131072, 0, 1441800, 131072, 0, 1507336, 131072, 0, 1572872, 131072, 0, 1638408, 131072, 0, 9, 131072, 0, 65545, 131072, 0, 131081, 131072, 0, 196617, 131072, 0, 262153, 131072, 0, 327689, 131072, 0, 393225, 65536, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, 917513, 0, 0, 983049, 0, 0, 1048585, 0, 0, 1114121, 131072, 0, 1179657, 0, 0, 1245193, 65536, 0, 1310729, 131072, 0, 1376265, 131072, 0, 1441801, 131072, 0, 1507337, 131072, 0, 1572873, 131072, 0, 1638409, 131072, 0, 10, 131072, 0, 65546, 131072, 0, 131082, 131072, 0, 196618, 131072, 0, 262154, 131072, 0, 327690, 131072, 0, 393226, 65536, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, 917514, 0, 0, 983050, 0, 0, 1048586, 0, 0, 1114122, 131072, 0, 1179658, 0, 0, 1245194, 65536, 0, 1310730, 131072, 0, 1376266, 131072, 0, 1441802, 131072, 0, 1507338, 131072, 0, 1572874, 131072, 0, 1638410, 131072, 0, 11, 131072, 0, 65547, 131072, 0, 131083, 131072, 0, 196619, 131072, 0, 262155, 131072, 0, 327691, 65536, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, 917515, 0, 0, 983051, 0, 0, 1048587, 0, 0, 1114123, 0, 0, 1179659, 0, 0, 1245195, 0, 0, 1310731, 65536, 0, 1376267, 131072, 0, 1441803, 131072, 0, 1507339, 131072, 0, 1572875, 131072, 0, 1638411, 131072, 0, 12, 131072, 0, 65548, 131072, 0, 131084, 131072, 0, 196620, 131072, 0, 262156, 65536, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 131072, 0, 851980, 131072, 0, 917516, 131072, 0, 983052, 0, 0, 1048588, 0, 0, 1114124, 0, 0, 1179660, 0, 0, 1245196, 0, 0, 1310732, 0, 0, 1376268, 65536, 0, 1441804, 131072, 0, 1507340, 131072, 0, 1572876, 131072, 0, 1638412, 131072, 0, 13, 131072, 0, 65549, 131072, 0, 131085, 131072, 0, 196621, 131072, 0, 262157, 65536, 0, 327693, 0, 0, 393229, 0, 0, 458765, 0, 0, 524301, 0, 0, 589837, 0, 0, 655373, 0, 0, 720909, 131072, 0, 786445, 131072, 0, 851981, 131072, 0, 917517, 0, 0, 983053, 0, 0, 1048589, 0, 0, 1114125, 0, 0, 1179661, 0, 0, 1245197, 0, 0, 1310733, 0, 0, 1376269, 65536, 0, 1441805, 131072, 0, 1507341, 131072, 0, 1572877, 131072, 0, 1638413, 131072, 0, 14, 131072, 0, 65550, 131072, 0, 131086, 131072, 0, 196622, 65536, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 131072, 0, 720910, 131072, 0, 786446, 131072, 0, 851982, 131072, 0, 917518, 0, 0, 983054, 0, 0, 1048590, 0, 0, 1114126, 0, 0, 1179662, 0, 0, 1245198, 0, 0, 1310734, 0, 0, 1376270, 65536, 0, 1441806, 131072, 0, 1507342, 131072, 0, 1572878, 131072, 0, 1638414, 131072, 0, 15, 131072, 0, 65551, 131072, 0, 131087, 131072, 0, 196623, 65536, 0, 262159, 0, 0, 327695, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 131072, 0, 720911, 131072, 0, 786447, 131072, 0, 851983, 0, 0, 917519, 0, 0, 983055, 0, 0, 1048591, 0, 0, 1114127, 0, 0, 1179663, 0, 0, 1245199, 0, 0, 1310735, 65536, 0, 1376271, 131072, 0, 1441807, 131072, 0, 1507343, 131072, 0, 1572879, 131072, 0, 1638415, 131072, 0, 16, 131072, 0, 65552, 131072, 0, 131088, 65536, 0, 196624, 0, 0, 262160, 0, 0, 327696, 0, 0, 393232, 0, 0, 458768, 0, 0, 524304, 0, 0, 589840, 0, 0, 655376, 131072, 0, 720912, 131072, 0, 786448, 0, 0, 851984, 0, 0, 917520, 0, 0, 983056, 0, 0, 1048592, 0, 0, 1114128, 0, 0, 1179664, 0, 0, 1245200, 65536, 0, 1310736, 131072, 0, 1376272, 131072, 0, 1441808, 131072, 0, 1507344, 131072, 0, 1572880, 131072, 0, 1638416, 131072, 0, 17, 131072, 0, 65553, 131072, 0, 131089, 65536, 0, 196625, 0, 0, 262161, 0, 0, 327697, 0, 0, 393233, 0, 0, 458769, 0, 0, 524305, 65536, 0, 589841, 65536, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, 851985, 0, 0, 917521, 0, 0, 983057, 0, 0, 1048593, 0, 0, 1114129, 0, 0, 1179665, 65536, 0, 1245201, 131072, 0, 1310737, 131072, 0, 1376273, 131072, 0, 1441809, 131072, 0, 1507345, 131072, 0, 1572881, 131072, 0, 1638417, 131072, 0, 18, 131072, 0, 65554, 131072, 0, 131090, 131072, 0, 196626, 65536, 0, 262162, 65536, 0, 327698, 0, 0, 393234, 0, 0, 458770, 65536, 0, 524306, 131072, 0, 589842, 131072, 0, 655378, 65536, 0, 720914, 65536, 0, 786450, 65536, 0, 851986, 0, 0, 917522, 0, 0, 983058, 0, 0, 1048594, 65536, 0, 1114130, 65536, 0, 1179666, 131072, 0, 1245202, 131072, 0, 1310738, 131072, 0, 1376274, 131072, 0, 1441810, 131072, 0, 1507346, 131072, 0, 1572882, 131072, 0, 1638418, 131072, 0, 19, 131072, 0, 65555, 131072, 0, 131091, 131072, 0, 196627, 131072, 0, 262163, 131072, 0, 327699, 65536, 0, 393235, 65536, 0, 458771, 131072, 0, 524307, 131072, 0, 589843, 131072, 0, 655379, 131072, 0, 720915, 131072, 0, 786451, 131072, 0, 851987, 65536, 0, 917523, 65536, 0, 983059, 65536, 0, 1048595, 131072, 0, 1114131, 131072, 0, 1179667, 131072, 0, 1245203, 131072, 0, 1310739, 131072, 0, 1376275, 131072, 0, 1441811, 131072, 0, 1507347, 131072, 0, 1572883, 131072, 0, 1638419, 131072, 0)
@@ -5446,6 +5449,10 @@ Panel/styles/panel = SubResource("StyleBoxFlat_w48qg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
 size = Vector2(1144, 412)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ryguw"]
+streams_count = 1
+stream_0/stream = ExtResource("21_getpj")
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_lquwl")
 
@@ -5457,7 +5464,7 @@ tile_map_data = PackedByteArray("AAAMAPn/AgAKAA8AAAAMAPr/AgAKABAAAAAMAPv/AgAKABE
 tile_set = SubResource("TileSet_h2yge")
 script = ExtResource("5_272bh")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="background/TileMapLayer"]
+[node name="walk_sound" type="AudioStreamPlayer" parent="background/TileMapLayer"]
 stream = ExtResource("8_cegan")
 
 [node name="player" parent="background" instance=ExtResource("5_7mycd")]
@@ -5467,13 +5474,6 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="background/player"]
-layout_mode = 0
-offset_left = -59.0
-offset_top = -48.0
-offset_right = -35.0
-offset_bottom = -26.0
 
 [node name="Label" type="Label" parent="background/player"]
 layout_mode = 0
@@ -5527,6 +5527,7 @@ theme_override_font_sizes/font_size = 5
 text = "4"
 
 [node name="Test1" type="Button" parent="background/player"]
+visible = false
 layout_mode = 0
 offset_left = 254.0
 offset_top = -82.0
@@ -5535,6 +5536,7 @@ offset_bottom = -3.0
 text = "距离+1"
 
 [node name="Test2" type="Button" parent="background/player"]
+visible = false
 layout_mode = 0
 offset_left = 384.0
 offset_top = -83.0
@@ -5551,6 +5553,18 @@ offset_bottom = -38.0
 theme_override_fonts/font = ExtResource("10_82xsv")
 theme_override_font_sizes/font_size = 10
 text = "重开"
+
+[node name="Control" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control2" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control3" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
+
+[node name="Control4" parent="background/player" instance=ExtResource("11_d13ii")]
+layout_mode = 1
 
 [node name="pllllayer" parent="background" instance=ExtResource("7_5vw27")]
 
@@ -5660,11 +5674,46 @@ shape = SubResource("RectangleShape2D_cegan")
 [node name="Emotional" parent="Camera2D/PanelContainer/CanvasLayer" instance=ExtResource("16_2cqfq")]
 
 [node name="Doomtime" type="RichTextLabel" parent="Camera2D/PanelContainer/CanvasLayer"]
+visible = false
 offset_left = 447.0
 offset_top = 2.0
 offset_right = 678.0
 offset_bottom = 88.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_82xsv")
 theme_override_font_sizes/normal_font_size = 55
+
+[node name="新手教程" type="Sprite2D" parent="Camera2D/PanelContainer/CanvasLayer"]
+position = Vector2(904, 460)
+scale = Vector2(0.439201, 0.485411)
+texture = ExtResource("21_ryguw")
+
+[node name="新手教程2" type="RichTextLabel" parent="Camera2D/PanelContainer/CanvasLayer"]
+offset_left = 10.0
+offset_top = 199.0
+offset_right = 436.0
+offset_bottom = 716.0
+text = "图例解释：
+	黄星下：当前回合所处的情绪状态
+	对勾：对应当前所处回合下，能够使用类型为竖表头的牌
+	红叉：对应当前会回合下，不能使用类型为竖表头的牌。
+
+游戏规则：
+每个移动力仅能移动1格。每回合开始时抽2张牌，小x能获得2点移动力，大x获得3点。出牌规则如右图所示。
+走过的格子将被涂上当前所处情绪对应的颜色，已经被涂上颜色的格子不会再被涂抹。颜色有如下作用：
+喜，绿色：移动到上方时，抽两张牌。
+怒，红色：无法通过
+哀，蓝色：移动到上方时，失去两点行动力。
+惧，紫色：
+
+连续打出两张相同类型的牌时，抽1张牌。
+
+牌堆共有8张牌，只有在新回合开始时且牌堆无牌时，才会将弃牌堆吸入牌堆。
+"
+
+[node name="情绪状态" type="Sprite2D" parent="Camera2D/PanelContainer/CanvasLayer"]
+position = Vector2(441.085, 129.635)
+scale = Vector2(0.195, 0.195)
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/PanelContainer"]
 layout_mode = 2
@@ -5676,18 +5725,20 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -28.0
-offset_right = 91.75
-offset_bottom = 32.25
+offset_left = -45.36
+offset_top = -52.28
+offset_right = 46.64
+offset_bottom = -22.28
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 15
 text = "开始游戏"
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ryguw")
+
 [connection signal="happy_trigger" from="background/TileMapLayer" to="Camera2D/PanelContainer/CanvasLayer/Card manager" method="_on_tile_map_layer_happy_trigger"]
-[connection signal="pressed" from="background/player/Button" to="background/TileMapLayer" method="_on_button_pressed"]
 [connection signal="button_up" from="background/player/Button2" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_2_button_up"]
 [connection signal="button_up" from="background/player/Button3" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_3_button_up"]
 [connection signal="button_up" from="background/player/Button4" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_4_button_up"]
@@ -5700,3 +5751,4 @@ text = "开始游戏"
 [connection signal="card_played_3" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_3"]
 [connection signal="button_up" from="Camera2D/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Camera2D/Button" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_button_up"]
+[connection signal="finished" from="BGM" to="." method="_on_bgm_finished"]

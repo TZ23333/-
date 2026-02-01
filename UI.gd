@@ -13,6 +13,13 @@ var DILOGS : Resource
 @onready var button_4: Button = $"../../../background/player/Button4"
 @onready var button_5: Button = $"../../../background/player/Button5"
 @onready var camera_2d: Camera2D = $"../.."
+@onready var 新手教程2: RichTextLabel = $新手教程2
+@onready var 新手教程: Sprite2D = $新手教程
+@onready var control: Control = $"../../../background/player/Control"
+@onready var control_2: Control = $"../../../background/player/Control2"
+@onready var control_3: Control = $"../../../background/player/Control3"
+@onready var control_4: Control = $"../../../background/player/Control4"
+@onready var doomtime: RichTextLabel = $Doomtime
 
 
 # Called when the node enters the scene tree for the first time.
@@ -72,6 +79,7 @@ func _on_button_2_button_up() -> void:
 	DILOGS = load("res://resource/1_dilogs.tres")
 	Infos.vectory_sign += 1
 	button_2.disabled = true
+	control.visible = false
 
 
 
@@ -82,7 +90,7 @@ func _on_button_3_button_up() -> void:
 	DILOGS = load("res://resource/2_dilogs.tres")
 	Infos.vectory_sign += 1
 	button_3.disabled = true
-
+	control_2.visible = false
 
 func _on_button_4_button_up() -> void:
 	$Label.show()
@@ -91,7 +99,9 @@ func _on_button_4_button_up() -> void:
 	DILOGS = load("res://resource/3_dilogs.tres")
 	Infos.vectory_sign += 1
 	button_4.disabled = true
-
+	control_3.visible = false
+	
+	
 func _on_button_5_button_up() -> void:
 	$Label.show()
 	ui_ing.emit(true)
@@ -99,11 +109,11 @@ func _on_button_5_button_up() -> void:
 	DILOGS = load("res://resource/4_dilogs.tres")
 	Infos.vectory_sign += 1
 	button_5.disabled = true
-
+	control_4.visible = false
 
 
 func _process(delta: float) -> void:
-	doomtime.text = str(Infos.doom_time)
+	doomtime.text = "剩余回合：" + str(Infos.doom_time)
 	if ui_time:
 		$CardZones.hide()
 		$Doomtime.hide()
@@ -127,6 +137,9 @@ func play_ending():
 
 func _on_button_button_up() -> void:
 	$Label.show()
+	新手教程.visible = false
+	新手教程2.visible = false
+	doomtime.visible = true
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/5_dilogs.tres")

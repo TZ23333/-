@@ -9,6 +9,7 @@ enum GamePhase{
 @onready var card_manager: CardManager = $"../Card manager"
 @onready var card_display: CardDisplayManager = $"../CardDisplayManager"
 @onready var ui: CanvasLayer = $"../UI"
+@onready var 情绪状态: Sprite2D = $"../情绪状态"
 
 @export var starting_mana: int = 1
 @export var max_mana: int = 10
@@ -39,6 +40,7 @@ func setup_game():
 	
 	#开始第一回合
 	start_new_turn()
+	load_image("喜")
 
 func draw_starting_hand(count:int = 3):
 	for i in range(count):
@@ -105,11 +107,25 @@ func _input(event):
 func end_current_turn():
 	print("第",current_turn,"回合结束")
 	Infos.doom_time -= 1
+	match Emotional.emotion_changeTo+1:
+		0:
+			load_image("喜")
+		1:
+			load_image("怒")
+		2:
+			load_image("哀")
+		3:
+			load_image("惧")
+		4:
+			load_image("喜")
 	is_player_turn = false
 	current_turn += 1
 	is_player_turn = true
 	start_new_turn()
 	
+func load_image(str:String):
+	var imgPath ="res://Sprite/CardIcon/"+str+".png"
+	情绪状态.texture = load(imgPath)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

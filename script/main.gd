@@ -9,6 +9,14 @@ extends Node2D
 @onready var panel_container: PanelContainer = $Camera2D/PanelContainer/CanvasLayer/PanelContainer
 @onready var label: Label = $Camera2D/PanelContainer/CanvasLayer/Label
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var test_1: Button = $background/player/Test1
+@onready var test_2: Button = $background/player/Test2
+@onready var bgm: AudioStreamPlayer2D = $BGM
+@onready var control: Control = $background/player/Control
+@onready var control_2: Control = $background/player/Control2
+@onready var control_4: Control = $background/player/Control4
+@onready var control_3: Control = $background/player/Control3
+@onready var canvas_layer: CanvasLayer = $Camera2D/PanelContainer/CanvasLayer
 
 signal moveing(usedcell : Array[Vector2i],chik : InputEvent)
 signal talk(chik : InputEvent)
@@ -25,6 +33,9 @@ func _ready() -> void:
 	panel_container.visible = false
 	label.visible = false
 	camera_2d.zoom = Vector2(5,5)
+	test_1.visible = false
+	test_2.visible = false
+	doomtime.visible = false
 	
 	for cell in tile_map_layer.get_used_cells():
 		if tile_map_layer.get_cell_tile_data(cell).get_custom_data("able"):
@@ -44,6 +55,10 @@ func _input(event: InputEvent) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	now_position = $background/TileMapLayer.local_to_map(player.position)
+	control.global_position = player.global_position + Vector2(Vector2i(12,0)-now_position).normalized() * 10
+	control_2.global_position = player.global_position + Vector2(Vector2i(42,0)-now_position).normalized() * 10
+	control_3.global_position = player.global_position + Vector2(Vector2i(26,3)-now_position).normalized() * 10
+	control_4.global_position = player.global_position + Vector2(Vector2i(26,24)-now_position).normalized() * 10
 	if now_position == Vector2i(12,0):
 		$background/player/Button2.show()
 		$background/player/Button2.global_position = $background/player.global_position
@@ -74,6 +89,7 @@ func _process(delta: float) -> void:
 func play_ending_new():
 	$background/player.remove_child(camera_2d)
 	self.add_child(camera_2d)
+	canvas_layer.visible = false
 	var tween:Tween = get_tree().create_tween().set_parallel()
 	tween.tween_property(camera_2d,"zoom",Vector2(0.765,0.765),3.0).set_ease(Tween.EASE_OUT)
 	tween.tween_property(camera_2d,"global_position",Vector2(541.36,248.28),3.0).set_ease(Tween.EASE_OUT)
@@ -87,9 +103,15 @@ func _on_button_button_up() -> void:
 	$background.show()
 	handzone.visible = true
 	doomtime.visible = true
+	bgm.play()
 	pass # Replace with function body.
 
 
 func _on_reset_button_down() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
+	pass # Replace with function body.
+
+
+func _on_bgm_finished() -> void:
+	bgm.play()
 	pass # Replace with function body.

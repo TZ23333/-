@@ -7,6 +7,7 @@ const PLLLLAYER = preload("res://scenc/pllllayer.tscn")
 @onready var camera_2d: Camera2D = $"../../Camera2D"
 @onready var label: Label = $"../player/Label"
 @onready var canvas_layer: CanvasLayer = $"../../Camera2D/PanelContainer/CanvasLayer"
+@onready var walk_sound: AudioStreamPlayer = $walk_sound
 
 signal happy_trigger
 signal sad_trigger
@@ -102,6 +103,7 @@ func moveto(usedcell:Array[Vector2i],event:InputEvent):
 					
 			player.global_position = self.map_to_local(cell)
 			mos -= 1
+			walk_sound.play()
 			check_tile_effect(self.local_to_map(player.position))
 			pllllayer.hide()
 			moveing = Vector2i.ZERO
@@ -136,20 +138,13 @@ func isui(ui_ing : bool):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	label.text = str(mos)
-	camera_2d.global_position = player.global_position
+	if Infos.vectory_sign < 5:
+		camera_2d.global_position = player.global_position
 	if mos <= 0:
 		mos = 0
 	if move_distance <=1:
 		move_distance = 1
 	pass
-
-
-func _on_button_pressed() -> void:
-	mos += 1
-	pass # Replace with function body.
-
-
-
 
 func _on_card_manager_card_played_2() -> void:
 	mos += 2
