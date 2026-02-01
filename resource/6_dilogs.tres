@@ -1,8 +1,112 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=3 format=3 uid="uid://ct3of41pg3j3p"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=18 format=3 uid="uid://ct3of41pg3j3p"]
 
-[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_mct0a"]
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_klb5g"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_f783q"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_klb5g"]
+
+[sub_resource type="Resource" id="Resource_4ylqt"]
+script = ExtResource("1_klb5g")
+text = "（已经将面具染上了色彩，似乎有什么不一样的事情正在发生）"
+chs = false
+chss = Array[ExtResource("2_f783q")]([])
+next = 1
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_3j2u3"]
+script = ExtResource("2_f783q")
+qus = "他们似乎很怪。"
+next = 2
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_klo18"]
+script = ExtResource("1_klb5g")
+text = "恭喜你，怀特先生，面具已经染上了喜怒哀惧四种颜色。"
+chs = true
+chss = Array[ExtResource("2_f783q")]([SubResource("Resource_3j2u3")])
+next = 2
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_ug8x6"]
+script = ExtResource("2_f783q")
+qus = "也许吧，涂满面具以后呢？"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_f2t32"]
+script = ExtResource("1_klb5g")
+text = "说不好呢，也许他们自己不这样想呢。"
+chs = true
+chss = Array[ExtResource("2_f783q")]([SubResource("Resource_ug8x6")])
+next = 3
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_6tivi"]
+script = ExtResource("2_f783q")
+qus = "戴上面具"
+next = 8
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_7xxdj"]
+script = ExtResource("2_f783q")
+qus = "不戴面具"
+next = 5
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_7qnrd"]
+script = ExtResource("1_klb5g")
+text = "你可以选择戴上面具，也可以选择不这么做。"
+chs = true
+chss = Array[ExtResource("2_f783q")]([SubResource("Resource_6tivi"), SubResource("Resource_7xxdj")])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_3weio"]
+script = ExtResource("2_f783q")
+qus = "戴上面具"
+next = 6
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_66ytg"]
+script = ExtResource("1_klb5g")
+text = "哈哈，我开玩笑的。"
+chs = true
+chss = Array[ExtResource("2_f783q")]([SubResource("Resource_3weio")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_pghkn"]
+script = ExtResource("1_klb5g")
+text = "没什么特别的，只是和平常生活一样。想想那些日常的情绪表达，先生，谁又能说情绪不是另一种形式的面具呢？"
+chs = false
+chss = Array[ExtResource("2_f783q")]([])
+next = 6
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_7chsq"]
+script = ExtResource("1_klb5g")
+text = "不过先生，我们想赠送给你另一个面具，名为快乐的面具。"
+chs = false
+chss = Array[ExtResource("2_f783q")]([])
+next = 10
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_i7kdq"]
+script = ExtResource("1_klb5g")
+text = "这就对了！旅程还没结束，希望离开这以后，你也能从容地继续你的旅途。"
+chs = false
+chss = Array[ExtResource("2_f783q")]([])
+next = 9
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_2fjrs"]
+script = ExtResource("1_klb5g")
+text = "祝福你一切顺利，再见，怀特先生。"
+chs = false
+chss = Array[ExtResource("2_f783q")]([])
+next = 10
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
 [resource]
 script = ExtResource("2_klb5g")
+_dilogs = Array[ExtResource("1_klb5g")]([SubResource("Resource_4ylqt"), SubResource("Resource_klo18"), SubResource("Resource_f2t32"), SubResource("Resource_7qnrd"), SubResource("Resource_66ytg"), SubResource("Resource_pghkn"), SubResource("Resource_7chsq"), SubResource("Resource_i7kdq"), SubResource("Resource_2fjrs")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"

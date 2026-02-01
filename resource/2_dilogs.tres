@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=6 format=3 uid="uid://5r50fu3lysgb"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=16 format=3 uid="uid://5r50fu3lysgb"]
 
 [ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_s45b6"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_s45b6"]
@@ -6,19 +6,89 @@
 
 [sub_resource type="Resource" id="Resource_bihqg"]
 script = ExtResource("2_wgajc")
-qus = "你是谁"
+qus = "你看起来不高兴"
 next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_s45b6"]
+script = ExtResource("2_wgajc")
+qus = "来笑一个吧，快乐是会传染的"
+next = 2
 metadata/_custom_type_script = "uid://bn2lf302p2hgo"
 
 [sub_resource type="Resource" id="Resource_e6qxh"]
 script = ExtResource("1_s45b6")
-text = "哦你好我的朋友——怀特先生。见到您就像是沐浴三月的春风，欢迎您的到来。"
+text = " 谁让你私自进来的?"
 chs = true
-chss = Array[ExtResource("2_wgajc")]([SubResource("Resource_bihqg")])
+chss = Array[ExtResource("2_wgajc")]([SubResource("Resource_bihqg"), SubResource("Resource_s45b6")])
 next = 1
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_wgajc"]
+script = ExtResource("2_wgajc")
+qus = "夸奖不会让你开心吗"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_rli00"]
+script = ExtResource("2_wgajc")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_aeg04"]
+script = ExtResource("1_s45b6")
+text = "这就是你下的判断? 我还以为你能有什么新意，你跟那些家伙一样自以为是，整天唠唠叨叨唠唠叨叨，开个破会没完没了。"
+chs = true
+chss = Array[ExtResource("2_wgajc")]([SubResource("Resource_wgajc"), SubResource("Resource_rli00")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_mejkn"]
+script = ExtResource("2_wgajc")
+qus = "夸奖不会让你开心吗"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_1n08y"]
+script = ExtResource("2_wgajc")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_ncagx"]
+script = ExtResource("1_s45b6")
+text = "白痴！你跟喜那个疯子一样！一天天的有什么东西可乐的，天天呲个大白牙在外面，简直就像工厂的看门狗一样。怀特，你别自以为是了，你什么都改变不了！"
+chs = true
+chss = Array[ExtResource("2_wgajc")]([SubResource("Resource_mejkn"), SubResource("Resource_1n08y")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_7w205"]
+script = ExtResource("1_s45b6")
+text = "我不需要那种东西！那是废物需要的！自从我失败以后就没人这样和我说过了，这是弱者才需要的！我愤怒，那些人根本不知道我是什么处境就来评头论足，如果我能有一把利刃，我会将那些带着丑陋面具，嘴里天天说着吉祥话的人一片一片片成肉片！"
+chs = false
+chss = Array[ExtResource("2_wgajc")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_e1ofk"]
+script = ExtResource("1_s45b6")
+text = "快走快走，看见你们这些让我加班的人就烦。等会儿，我叫做怒，你不惹我我也这样。"
+chs = false
+chss = Array[ExtResource("2_wgajc")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_axlci"]
+script = ExtResource("1_s45b6")
+text = "（为面具染上了怒的颜色）"
+chs = false
+chss = Array[ExtResource("2_wgajc")]([])
+next = 6
 metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
 [resource]
 script = ExtResource("2_s45b6")
-_dilogs = Array[ExtResource("1_s45b6")]([SubResource("Resource_e6qxh")])
+_dilogs = Array[ExtResource("1_s45b6")]([SubResource("Resource_e6qxh"), SubResource("Resource_aeg04"), SubResource("Resource_ncagx"), SubResource("Resource_7w205"), SubResource("Resource_e1ofk"), SubResource("Resource_axlci")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"

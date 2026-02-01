@@ -1,8 +1,94 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=3 format=3 uid="uid://c3a1264s1xmvv"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=16 format=3 uid="uid://c3a1264s1xmvv"]
 
-[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_7ai4s"]
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_3fwj4"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_3fwj4"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_tg7oy"]
+
+[sub_resource type="Resource" id="Resource_157ks"]
+script = ExtResource("2_tg7oy")
+qus = "我没做什么啊"
+next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_5yfri"]
+script = ExtResource("2_tg7oy")
+qus = "你害怕什么呢"
+next = 2
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_7yaja"]
+script = ExtResource("1_3fwj4")
+text = "一下...两下...啊啊啊啊啊啊！你吓我一跳！"
+chs = true
+chss = Array[ExtResource("2_tg7oy")]([SubResource("Resource_157ks"), SubResource("Resource_5yfri")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_6kt21"]
+script = ExtResource("2_tg7oy")
+qus = "这个试验场的目的是什么"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_kx5hk"]
+script = ExtResource("2_tg7oy")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_hnjkf"]
+script = ExtResource("1_3fwj4")
+text = "也不是你的错，我天生就害怕很多东西，但大部分时候我能冷静下来和别人正常交流。"
+chs = true
+chss = Array[ExtResource("2_tg7oy")]([SubResource("Resource_6kt21"), SubResource("Resource_kx5hk")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_gh5u7"]
+script = ExtResource("2_tg7oy")
+qus = "这个试验场的目的是什么"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_ehm6c"]
+script = ExtResource("2_tg7oy")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_ruaf7"]
+script = ExtResource("1_3fwj4")
+text = "说是害怕某样东西，不如说是害怕一种感觉，害怕一种不确定的感觉。曾经有客人告诉我，一切恐惧源自于未知，听起来确实有些道理。比如说有客人在考试过后会害怕知道自己的成绩，有客人说自己很害怕宇宙，因为未知的事物太多了。再比如说，您刚刚就这样突然出现在我身后......我又起了一身鸡皮疙瘩。"
+chs = true
+chss = Array[ExtResource("2_tg7oy")]([SubResource("Resource_gh5u7"), SubResource("Resource_ehm6c")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_nj44e"]
+script = ExtResource("1_3fwj4")
+text = "目的......啊......啊啊啊啊啊啊！别过来老板......别过来，别过来，我不想戴上那个面具......太可怕了......太可怕了......那东西会杀死我的......"
+chs = false
+chss = Array[ExtResource("2_tg7oy")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_4wiye"]
+script = ExtResource("1_3fwj4")
+text = "再见，我叫做惧......最好别记得我......"
+chs = false
+chss = Array[ExtResource("2_tg7oy")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_vwa07"]
+script = ExtResource("1_3fwj4")
+text = "（为面具染上了惧的颜色）"
+chs = false
+chss = Array[ExtResource("2_tg7oy")]([])
+next = 6
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
 [resource]
 script = ExtResource("2_3fwj4")
+_dilogs = Array[ExtResource("1_3fwj4")]([SubResource("Resource_7yaja"), SubResource("Resource_hnjkf"), SubResource("Resource_ruaf7"), SubResource("Resource_nj44e"), SubResource("Resource_4wiye"), SubResource("Resource_vwa07")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"

@@ -8,6 +8,11 @@ var ui_time := false
 var DILOGS : Resource
 @onready var main: Node2D = $"../../.."
 @onready var doomtime: RichTextLabel = $Doomtime
+@onready var button_2: Button = $"../../../background/player/Button2"
+@onready var button_3: Button = $"../../../background/player/Button3"
+@onready var button_4: Button = $"../../../background/player/Button4"
+@onready var button_5: Button = $"../../../background/player/Button5"
+@onready var camera_2d: Camera2D = $"../.."
 
 
 # Called when the node enters the scene tree for the first time.
@@ -65,6 +70,8 @@ func _on_button_2_button_up() -> void:
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/1_dilogs.tres")
+	Infos.vectory_sign += 1
+	button_2.disabled = true
 
 
 
@@ -73,7 +80,8 @@ func _on_button_3_button_up() -> void:
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/2_dilogs.tres")
-
+	Infos.vectory_sign += 1
+	button_3.disabled = true
 
 
 func _on_button_4_button_up() -> void:
@@ -81,30 +89,45 @@ func _on_button_4_button_up() -> void:
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/3_dilogs.tres")
-
-
+	Infos.vectory_sign += 1
+	button_4.disabled = true
 
 func _on_button_5_button_up() -> void:
 	$Label.show()
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/4_dilogs.tres")
+	Infos.vectory_sign += 1
+	button_5.disabled = true
 
 
 
-func _on_button_6_button_up() -> void:
-	$Label.show()
-	ui_ing.emit(true)
-	ui_time = true
-	DILOGS = load("res://resource/5_dilogs.tres")
+func _process(delta: float) -> void:
+	doomtime.text = str(Infos.doom_time)
+	if ui_time:
+		$CardZones.hide()
+		$Doomtime.hide()
+	else :
+		$CardZones.show()
+		$Doomtime.show()
+	if ui_time == false and Infos.vectory_sign == 4:
+		play_ending()
 
 
-
-func _on_button_7_button_up() -> void:
+#结局
+func play_ending():
 	$Label.show()
 	ui_ing.emit(true)
 	ui_time = true
 	DILOGS = load("res://resource/6_dilogs.tres")
+	Infos.vectory_sign = 5
+	pass # Replace with function body.
 
-func _process(delta: float) -> void:
-	doomtime.text = str(Infos.doom_time)
+
+
+func _on_button_button_up() -> void:
+	$Label.show()
+	ui_ing.emit(true)
+	ui_time = true
+	DILOGS = load("res://resource/5_dilogs.tres")
+	pass # Replace with function body.

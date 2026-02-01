@@ -1,56 +1,102 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=10 format=3 uid="uid://b4ii7dvi7oo5x"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=17 format=3 uid="uid://b4ii7dvi7oo5x"]
 
 [ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_4plcl"]
 [ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_3ewow"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_15kfc"]
 
-[sub_resource type="Resource" id="Resource_thf8n"]
+[sub_resource type="Resource" id="Resource_sm78k"]
 script = ExtResource("2_3ewow")
-qus = "你是谁？"
+qus = "你是谁"
 next = 1
 metadata/_custom_type_script = "uid://bn2lf302p2hgo"
 
-[sub_resource type="Resource" id="Resource_eua38"]
+[sub_resource type="Resource" id="Resource_2nrmc"]
+script = ExtResource("2_3ewow")
+qus = "今天天气真不错"
+next = 2
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_qot4m"]
 script = ExtResource("1_4plcl")
-text = "欢迎参观情绪试验场，欢迎光临，怀特先生。"
+text = " 哦你好我的朋友，欢迎你的到来，来跳支舞吧！"
 chs = true
-chss = Array[ExtResource("2_3ewow")]([SubResource("Resource_thf8n")])
+chss = Array[ExtResource("2_3ewow")]([SubResource("Resource_sm78k"), SubResource("Resource_2nrmc")])
 next = 1
 metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
-[sub_resource type="Resource" id="Resource_jcp15"]
-script = ExtResource("1_4plcl")
-text = "或许这并不重要。但如果您想知道的话，我可以告诉您我的名字——我叫麦斯克，先生，是服务于这家试验场的侍者。"
-chs = false
-chss = Array[ExtResource("2_3ewow")]([])
-next = 2
-metadata/_custom_type_script = "uid://bom3bi2ixjckq"
-
-[sub_resource type="Resource" id="Resource_gbcac"]
-script = ExtResource("1_4plcl")
-text = "寒暄就免了，来说点正经事吧。这里是为了交流而产生的，如果想要有好的体验，就请去找好朋友们吧。他们散落分布在面具上，每个人都准备了礼物想要送给你。"
-chs = false
-chss = Array[ExtResource("2_3ewow")]([])
+[sub_resource type="Resource" id="Resource_bqsjc"]
+script = ExtResource("2_3ewow")
+qus = "我很喜欢你"
 next = 3
-metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
 
-[sub_resource type="Resource" id="Resource_5lff3"]
-script = ExtResource("1_4plcl")
-text = "按照老板的规矩，你似乎只能按照特定的路线去见朋友。不过我得提醒你，就像你日常生活一样，难免有的时候不想社交。和我们这些个性鲜明的好朋友聊天可是很耗费精力的，你得想想怎么完成目标。顺便一提，学习是人的本能之一，你可能会被他们影响呢。"
-chs = false
-chss = Array[ExtResource("2_3ewow")]([])
+[sub_resource type="Resource" id="Resource_m5gj8"]
+script = ExtResource("2_3ewow")
+qus = "转身就走"
 next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_ympqg"]
+script = ExtResource("1_4plcl")
+text = "我? 先生这不值一提，我无处不在。当你一觉睡到自然醒的时候，当你抽卡十连双黄的时候，当你美梦成真的时候，我都在这里。"
+chs = true
+chss = Array[ExtResource("2_3ewow")]([SubResource("Resource_bqsjc"), SubResource("Resource_m5gj8")])
+next = 0
 metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
-[sub_resource type="Resource" id="Resource_15kfc"]
+[sub_resource type="Resource" id="Resource_lsdrs"]
+script = ExtResource("2_3ewow")
+qus = "我很喜欢你"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_0kk2i"]
+script = ExtResource("2_3ewow")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_uicke"]
 script = ExtResource("1_4plcl")
-text = "无需多言，想走出这里的话，就想办法给这里染上自己的颜色吧。精神点我的朋友，别丢份啊。祝你好运。"
+text = "是的先生，前两天我们家热得快炸了，哀那小子居然问我为什么不开空调，多有意思啊！要是热水没溅到我身上就更好了。你说这和你的问题没什么关系，我知道啊，只是这个笑话很哏儿，开心就好了！"
+chs = true
+chss = Array[ExtResource("2_3ewow")]([SubResource("Resource_lsdrs"), SubResource("Resource_0kk2i")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_t6pkv"]
+script = ExtResource("1_4plcl")
+text = "哦！先生！真是感谢你！就像妈妈说的那样，当你向他人露出笑容的时候，他人也会回报给你笑容。瞧瞧，怀特先生你笑起来多么英俊啊！哈哈哈哈哈哈哈！真叫人高兴！哪怕您的笑容是出于礼节性的，我也甘之如饴！真叫人高兴我的老伙计！"
 chs = false
 chss = Array[ExtResource("2_3ewow")]([])
 next = 5
 metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
+[sub_resource type="Resource" id="Resource_sfip3"]
+script = ExtResource("1_4plcl")
+text = "哦，你这就要走了吗? 真是遗憾！可否允许我问你一个问题呢? 哈哈！真是爽快！嗯……那就这样吧！你来告诉我，什么东西三道弯？"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_bqh6j"]
+script = ExtResource("1_4plcl")
+text = "哈哈哈哈哈哈哈！对了！对了！就是这个！眼睛弯弯，嘴角弯弯，所有人都喜欢它！您真聪明！这个你就收好吧，就当是给你的见面礼！对了对了，你可别忘了咱啊，猜猜咱叫什么? 没错没错！咱叫做喜！"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 6
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_xmf1e"]
+script = ExtResource("1_4plcl")
+text = "（为面具染上了喜的颜色）"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 7
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
 [resource]
 script = ExtResource("2_15kfc")
-_dilogs = Array[ExtResource("1_4plcl")]([SubResource("Resource_eua38"), SubResource("Resource_jcp15"), SubResource("Resource_gbcac"), SubResource("Resource_5lff3"), SubResource("Resource_15kfc")])
+_dilogs = Array[ExtResource("1_4plcl")]([SubResource("Resource_qot4m"), SubResource("Resource_ympqg"), SubResource("Resource_uicke"), SubResource("Resource_t6pkv"), SubResource("Resource_sfip3"), SubResource("Resource_bqh6j"), SubResource("Resource_xmf1e")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"

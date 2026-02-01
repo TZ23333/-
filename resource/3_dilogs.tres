@@ -1,8 +1,94 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=3 format=3 uid="uid://cgb17rxvq2p67"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=16 format=3 uid="uid://cgb17rxvq2p67"]
 
-[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_3cifp"]
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_h25tn"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_ao0rs"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_h25tn"]
+
+[sub_resource type="Resource" id="Resource_repyl"]
+script = ExtResource("2_ao0rs")
+qus = " 你看起来需要帮助"
+next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_6kkr6"]
+script = ExtResource("2_ao0rs")
+qus = "能告诉我你为什么会这样想吗"
+next = 2
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_4an4a"]
+script = ExtResource("1_h25tn")
+text = "我的生命亦如风中残烛......哦，你好，可怜虫。"
+chs = true
+chss = Array[ExtResource("2_ao0rs")]([SubResource("Resource_repyl"), SubResource("Resource_6kkr6")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_qiad6"]
+script = ExtResource("2_ao0rs")
+qus = "真奇怪"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_cmb63"]
+script = ExtResource("2_ao0rs")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_b6dsl"]
+script = ExtResource("1_h25tn")
+text = "听起来有点道理，但你又能帮我什么呢？你又能帮我几次呢？你能把我变成一个有用的人吗？其实我们现在做的事也没有意义，不是吗？人们通常把这种感觉称为绝望吧，怎么努力都到不了终点，只有还剩最后一口气的时候才能......不，或许那也不会感到轻松，世界是不会向我展露积极的一面的。"
+chs = true
+chss = Array[ExtResource("2_ao0rs")]([SubResource("Resource_qiad6"), SubResource("Resource_cmb63")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_ts10d"]
+script = ExtResource("2_ao0rs")
+qus = "真奇怪"
+next = 3
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_f76mp"]
+script = ExtResource("2_ao0rs")
+qus = "转身就走"
+next = 4
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_fxbgn"]
+script = ExtResource("1_h25tn")
+text = "我不知道，或许我诞生的那一刻起就已经注定这样了吧，谁也改变不了什么。这很令人伤心，我也控制不住自己，或许等外面的树叶落干净的时候，我也就真正离开了。等到了那个时候你会来为我献上一束花吗？不会的，你们都不会回来的......我不该继续说下去了，怒那家伙一会儿又要来对我说难听的话了。（一阵极低的抽泣）"
+chs = true
+chss = Array[ExtResource("2_ao0rs")]([SubResource("Resource_ts10d"), SubResource("Resource_f76mp")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_1xrd0"]
+script = ExtResource("1_h25tn")
+text = "真奇怪吗？抱歉，让你有了不好的感觉......我还是消失吧。"
+chs = false
+chss = Array[ExtResource("2_ao0rs")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_5lo6x"]
+script = ExtResource("1_h25tn")
+text = "你要走了？希望你接下来也一切顺利，不要像我一样，出门就被大风迎面冲击。虽然喜总是叫我矫情鬼，但我也有自己的名字，我叫做哀。"
+chs = false
+chss = Array[ExtResource("2_ao0rs")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_6id8u"]
+script = ExtResource("1_h25tn")
+text = "（为面具染上了哀的颜色）"
+chs = false
+chss = Array[ExtResource("2_ao0rs")]([])
+next = 6
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
 [resource]
 script = ExtResource("2_h25tn")
+_dilogs = Array[ExtResource("1_h25tn")]([SubResource("Resource_4an4a"), SubResource("Resource_b6dsl"), SubResource("Resource_fxbgn"), SubResource("Resource_1xrd0"), SubResource("Resource_5lo6x"), SubResource("Resource_6id8u")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"

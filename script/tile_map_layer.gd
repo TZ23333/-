@@ -1,4 +1,5 @@
 extends TileMapLayer
+const PLLLLAYER = preload("res://scenc/pllllayer.tscn")
 
 @onready var main: Node2D = $"../.."
 @onready var player: Control = $"../player"
@@ -31,6 +32,21 @@ var ui_time := false
 func _ready() -> void:
 	main.moveing.connect(self.moveto)
 	canvas_layer.ui_ing.connect(self.isui)
+	var ic = PLLLLAYER.instantiate()
+	ic.global_position = self.map_to_local(Vector2i(12,0))
+	self.add_child(ic)
+	
+	var ic1 = PLLLLAYER.instantiate()
+	ic1.global_position = self.map_to_local(Vector2i(42,0))
+	self.add_child(ic1)
+
+	var ic2 = PLLLLAYER.instantiate()
+	ic2.global_position = self.map_to_local(Vector2i(26,3))
+	self.add_child(ic2)
+	
+	var ic3 = PLLLLAYER.instantiate()
+	ic3.global_position = self.map_to_local(Vector2i(26,24))
+	self.add_child(ic3)
 
 func moveto(usedcell:Array[Vector2i],event:InputEvent):
 	if event is not InputEventMouseButton:

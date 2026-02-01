@@ -1,8 +1,64 @@
-[gd_resource type="Resource" script_class="dilogs" load_steps=3 format=3 uid="uid://d06pwmew810h5"]
+[gd_resource type="Resource" script_class="dilogs" load_steps=11 format=3 uid="uid://d06pwmew810h5"]
 
-[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_iixm3"]
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_wnedc"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_764q6"]
 [ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_wnedc"]
+
+[sub_resource type="Resource" id="Resource_wht3n"]
+script = ExtResource("2_764q6")
+qus = "你是谁？"
+next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_dyaq8"]
+script = ExtResource("1_wnedc")
+text = "欢迎参观情绪试验场，欢迎光临，怀特先生。"
+chs = true
+chss = Array[ExtResource("2_764q6")]([SubResource("Resource_wht3n")])
+next = 0
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_rkg2u"]
+script = ExtResource("1_wnedc")
+text = "或许这并不重要。但如果你想知道的话，我可以告诉你我的名字——我叫麦斯克，负责给你讲些背景知识。"
+chs = false
+chss = Array[ExtResource("2_764q6")]([])
+next = 2
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_ltiwy"]
+script = ExtResource("1_wnedc")
+text = "寒暄就免了，来说点正经事吧。这里是为了交流而产生的，如果想要有好的体验，就请去找好朋友们吧。他们散落分布在面具上，每个人都准备了礼物想要送给你。"
+chs = false
+chss = Array[ExtResource("2_764q6")]([])
+next = 3
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_fx3ge"]
+script = ExtResource("1_wnedc")
+text = "按照老板的规矩，你似乎只能按照特定的路线去见朋友。不过我得提醒你，就像你日常生活一样，难免有的时候不想社交。和我们这些个性鲜明的好朋友聊天可是很耗费精力的，你得想想怎么完成目标，比如说规划好你的路线，或许能最大化运用你手里的资源。"
+chs = false
+chss = Array[ExtResource("2_764q6")]([])
+next = 4
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_u1scu"]
+script = ExtResource("1_wnedc")
+text = "无需多言，想走出这里的话，就想办法给这里染上自己的颜色吧。"
+chs = false
+chss = Array[ExtResource("2_764q6")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_fa3oc"]
+script = ExtResource("1_wnedc")
+text = "精神点我的朋友，别丢份儿啊。期待看到你优秀的表现，祝你好运。"
+chs = false
+chss = Array[ExtResource("2_764q6")]([])
+next = 6
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
 
 [resource]
 script = ExtResource("2_wnedc")
+_dilogs = Array[ExtResource("1_wnedc")]([SubResource("Resource_dyaq8"), SubResource("Resource_rkg2u"), SubResource("Resource_ltiwy"), SubResource("Resource_fx3ge"), SubResource("Resource_u1scu"), SubResource("Resource_fa3oc")])
 metadata/_custom_type_script = "uid://8hvkxhqnthdc"
