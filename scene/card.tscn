@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://gkbsm0w5fqj6"]
+
+[ext_resource type="Texture2D" uid="uid://ckqtnknxe642e" path="res://icon.svg" id="1_7p64d"]
+[ext_resource type="Script" uid="uid://bohufwudg6ck" path="res://script/card.gd" id="1_gw1lc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gw1lc"]
+font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy25p"]
+bg_color = Color(0.470076, 0.470076, 0.470076, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.666569, 0.666569, 0.666568, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p64d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gw1lc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_lu544"]
+Button/styles/hover = SubResource("StyleBoxFlat_xy25p")
+Button/styles/normal = SubResource("StyleBoxFlat_7p64d")
+Button/styles/pressed = SubResource("StyleBoxFlat_gw1lc")
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(90, 127.5)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1062.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gw1lc")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(90, 127.5)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+custom_minimum_size = Vector2(60, 97.5)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -61.5
+offset_right = 42.5
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="Panel/ColorRect"]
+position = Vector2(43.2, 68.965)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_7p64d")
+
+[node name="Title" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1"
+label_settings = SubResource("LabelSettings_gw1lc")
+
+[node name="description" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 146.0
+offset_right = 160.0
+offset_bottom = 237.0
+
+[node name="Button" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(90, 127.5)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_lu544")
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Panel/Button" to="." method="_on_button_button_up"]

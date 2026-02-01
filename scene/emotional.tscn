@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://co4rc7ow3qqs8"]
+
+[ext_resource type="Script" uid="uid://b687hnx8dh1xg" path="res://script/emotional.gd" id="1_ipyrq"]
+
+[node name="Emotional" type="Node2D"]
+script = ExtResource("1_ipyrq")

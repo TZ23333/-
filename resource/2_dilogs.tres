@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="dilogs" load_steps=6 format=3 uid="uid://5r50fu3lysgb"]
+
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_s45b6"]
+[ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_s45b6"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_wgajc"]
+
+[sub_resource type="Resource" id="Resource_bihqg"]
+script = ExtResource("2_wgajc")
+qus = "你是谁"
+next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_e6qxh"]
+script = ExtResource("1_s45b6")
+text = "哦你好我的朋友——怀特先生。见到您就像是沐浴三月的春风，欢迎您的到来。"
+chs = true
+chss = Array[ExtResource("2_wgajc")]([SubResource("Resource_bihqg")])
+next = 1
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[resource]
+script = ExtResource("2_s45b6")
+_dilogs = Array[ExtResource("1_s45b6")]([SubResource("Resource_e6qxh")])
+metadata/_custom_type_script = "uid://8hvkxhqnthdc"

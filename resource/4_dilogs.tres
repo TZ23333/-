@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="dilogs" load_steps=3 format=3 uid="uid://c3a1264s1xmvv"]
+
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_7ai4s"]
+[ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_3fwj4"]
+
+[resource]
+script = ExtResource("2_3fwj4")
+metadata/_custom_type_script = "uid://8hvkxhqnthdc"

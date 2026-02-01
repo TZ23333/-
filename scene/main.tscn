@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwj1y0du7j3no"]
+
+[ext_resource type="PackedScene" uid="uid://c76ioqtiby73b" path="res://scene/carddesk.tscn" id="1_v0l8b"]
+[ext_resource type="Script" uid="uid://dfgms4tvcgyql" path="res://scene/main.gd" id="1_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://gkbsm0w5fqj6" path="res://scene/card.tscn" id="2_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://cqndaspwwt2eh" path="res://scene/card_manager.tscn" id="4_p1hux"]
+[ext_resource type="PackedScene" uid="uid://i0kvnbs0v2yb" path="res://scene/game_manager.tscn" id="5_of57s"]
+[ext_resource type="PackedScene" uid="uid://bd3yjo5qc286p" path="res://scene/card_display_manager.tscn" id="6_b5f6u"]
+[ext_resource type="Script" uid="uid://c4fgkyn50hxr2" path="res://script/CardDisplayManager.gd" id="7_tqoya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hux"]
+size = Vector2(125.125, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of57s"]
+size = Vector2(120, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5f6u"]
+size = Vector2(1144, 412)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wp4xf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 500.0
+offset_right = 1149.0
+offset_bottom = 643.0
+
+[node name="Card manager" parent="." instance=ExtResource("4_p1hux")]
+card_scene = ExtResource("2_wp4xf")
+
+[node name="GameManager" parent="." instance=ExtResource("5_of57s")]
+
+[node name="CardDisplayManager" parent="." instance=ExtResource("6_b5f6u")]
+script = ExtResource("7_tqoya")
+
+[node name="CardZones" type="Node2D" parent="."]
+
+[node name="DeckZone" type="Area2D" parent="CardZones" groups=["card_dropable", "deck"]]
+position = Vector2(1073, 504)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardZones/DeckZone"]
+shape = SubResource("RectangleShape2D_p1hux")
+
+[node name="DiscardZone" type="Area2D" parent="CardZones" groups=["card_dropable", "discard"]]
+position = Vector2(73, 501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardZones/DiscardZone"]
+shape = SubResource("RectangleShape2D_of57s")
+
+[node name="Handzone" type="Control" parent="CardZones" groups=["card_dropable"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 150.0
+offset_top = 447.0
+offset_right = 190.0
+offset_bottom = 487.0
+
+[node name="Carddesk" parent="CardZones/Handzone" instance=ExtResource("1_v0l8b")]
+layout_mode = 1
+offset_right = 793.0
+offset_bottom = 154.0
+
+[node name="CardPoidesk" type="HBoxContainer" parent="CardZones/Handzone"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TableZone" type="Area2D" parent="CardZones"]
+position = Vector2(576, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardZones/TableZone"]
+shape = SubResource("RectangleShape2D_b5f6u")
+
+[node name="Card2" parent="." instance=ExtResource("2_wp4xf")]
+offset_left = 60.0
+offset_top = 478.0
+offset_right = 240.0
+offset_bottom = 733.0
+scale = Vector2(0.57, 0.57)
+
+[node name="UI" type="CanvasLayer" parent="."]

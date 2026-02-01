@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="dilogs" load_steps=10 format=3 uid="uid://b4ii7dvi7oo5x"]
+
+[ext_resource type="Script" uid="uid://bom3bi2ixjckq" path="res://script/dilog.gd" id="1_4plcl"]
+[ext_resource type="Script" uid="uid://bn2lf302p2hgo" path="res://script/cs.gd" id="2_3ewow"]
+[ext_resource type="Script" uid="uid://8hvkxhqnthdc" path="res://script/dlogs.gd" id="2_15kfc"]
+
+[sub_resource type="Resource" id="Resource_thf8n"]
+script = ExtResource("2_3ewow")
+qus = "你是谁？"
+next = 1
+metadata/_custom_type_script = "uid://bn2lf302p2hgo"
+
+[sub_resource type="Resource" id="Resource_eua38"]
+script = ExtResource("1_4plcl")
+text = "欢迎参观情绪试验场，欢迎光临，怀特先生。"
+chs = true
+chss = Array[ExtResource("2_3ewow")]([SubResource("Resource_thf8n")])
+next = 1
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_jcp15"]
+script = ExtResource("1_4plcl")
+text = "或许这并不重要。但如果您想知道的话，我可以告诉您我的名字——我叫麦斯克，先生，是服务于这家试验场的侍者。"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 2
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_gbcac"]
+script = ExtResource("1_4plcl")
+text = "寒暄就免了，来说点正经事吧。这里是为了交流而产生的，如果想要有好的体验，就请去找好朋友们吧。他们散落分布在面具上，每个人都准备了礼物想要送给你。"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 3
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_5lff3"]
+script = ExtResource("1_4plcl")
+text = "按照老板的规矩，你似乎只能按照特定的路线去见朋友。不过我得提醒你，就像你日常生活一样，难免有的时候不想社交。和我们这些个性鲜明的好朋友聊天可是很耗费精力的，你得想想怎么完成目标。顺便一提，学习是人的本能之一，你可能会被他们影响呢。"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 4
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[sub_resource type="Resource" id="Resource_15kfc"]
+script = ExtResource("1_4plcl")
+text = "无需多言，想走出这里的话，就想办法给这里染上自己的颜色吧。精神点我的朋友，别丢份啊。祝你好运。"
+chs = false
+chss = Array[ExtResource("2_3ewow")]([])
+next = 5
+metadata/_custom_type_script = "uid://bom3bi2ixjckq"
+
+[resource]
+script = ExtResource("2_15kfc")
+_dilogs = Array[ExtResource("1_4plcl")]([SubResource("Resource_eua38"), SubResource("Resource_jcp15"), SubResource("Resource_gbcac"), SubResource("Resource_5lff3"), SubResource("Resource_15kfc")])
+metadata/_custom_type_script = "uid://8hvkxhqnthdc"
