@@ -92,6 +92,9 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://main.tscn")
 	
 	if Input.is_action_just_pressed("重置"):
+		Infos.doom_time = 0
+		Infos.vectory_sign = 0
+		Emotional.emotion_changeTo = 0
 		get_tree().change_scene_to_file("res://main.tscn")
 		
 func play_ending_new():
