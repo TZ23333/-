@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://baey5bptilsbk"]
+[gd_scene load_steps=41 format=4 uid="uid://baey5bptilsbk"]
 
 [ext_resource type="Texture2D" uid="uid://b7cuj376xlgv1" path="res://spring/精灵-0001.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://jshacseimr2x" path="res://script/main.gd" id="1_lquwl"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3lm38oqo4b1" path="res://Sprite/Snipaste_2026-02-01_04-35-56.png" id="5_yaehf"]
 [ext_resource type="Texture2D" uid="uid://bslm31nof181t" path="res://Sprite/emotion.png" id="6_074og"]
 [ext_resource type="PackedScene" uid="uid://ug7o7cagi3w4" path="res://scenc/pllllayer.tscn" id="7_5vw27"]
-[ext_resource type="AudioStream" uid="uid://b810skkdxhhjs" path="res://Sound/Video Project.mp3" id="8_cegan"]
+[ext_resource type="AudioStream" uid="uid://b810skkdxhhjs" path="res://spring/Sound/Video Project.mp3" id="8_cegan"]
 [ext_resource type="FontFile" uid="uid://dum2nmp6raca3" path="res://fusion-pixel-12px-monospaced-zh_hans.ttf" id="10_82xsv"]
 [ext_resource type="PackedScene" uid="uid://i0kvnbs0v2yb" path="res://scene/game_manager.tscn" id="10_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://y6wwe6tdcij6" path="res://scene/direction.tscn" id="11_d13ii"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c76ioqtiby73b" path="res://scene/carddesk.tscn" id="13_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://gkbsm0w5fqj6" path="res://scene/card.tscn" id="14_vivmo"]
 [ext_resource type="PackedScene" uid="uid://co4rc7ow3qqs8" path="res://scene/emotional.tscn" id="16_2cqfq"]
-[ext_resource type="AudioStream" uid="uid://c2lubypy2kjyv" path="res://Sound/Maestro 1c.mp3" id="21_getpj"]
+[ext_resource type="AudioStream" uid="uid://c2lubypy2kjyv" path="res://spring/Sound/Maestro 1c.mp3" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://b3i0gfi741bux" path="res://新手教程.png" id="21_ryguw"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_lquwl"]
@@ -5449,6 +5449,18 @@ Panel/styles/panel = SubResource("StyleBoxFlat_w48qg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
 size = Vector2(1144, 412)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u8w0"]
+bg_color = Color(0.877616, 0.877616, 0.877616, 1)
+
+[sub_resource type="Theme" id="Theme_0odxb"]
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_1u8w0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d13ii"]
+bg_color = Color(0.860369, 0.860369, 0.860369, 1)
+
+[sub_resource type="Theme" id="Theme_1u8w0"]
+Label/styles/normal = SubResource("StyleBoxFlat_d13ii")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ryguw"]
 streams_count = 1
 stream_0/stream = ExtResource("21_getpj")
@@ -5538,24 +5550,6 @@ offset_bottom = -10.0
 theme_override_font_sizes/font_size = 5
 text = "4"
 
-[node name="Test1" type="Button" parent="background/player"]
-visible = false
-layout_mode = 0
-offset_left = 254.0
-offset_top = -82.0
-offset_right = 332.0
-offset_bottom = -3.0
-text = "距离+1"
-
-[node name="Test2" type="Button" parent="background/player"]
-visible = false
-layout_mode = 0
-offset_left = 384.0
-offset_top = -83.0
-offset_right = 467.0
-offset_bottom = -3.0
-text = "距离-1"
-
 [node name="pllllayer" parent="background" instance=ExtResource("7_5vw27")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -5612,6 +5606,9 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="GameManager" parent="Camera2D/PanelContainer/CanvasLayer" instance=ExtResource("10_ycdy4")]
+starting_mana = null
+max_mana = null
+starting_hand_size = null
 
 [node name="CardDisplayManager" parent="Camera2D/PanelContainer/CanvasLayer" instance=ExtResource("11_w48qg")]
 script = ExtResource("12_w48qg")
@@ -5665,13 +5662,14 @@ shape = SubResource("RectangleShape2D_cegan")
 
 [node name="Doomtime" type="RichTextLabel" parent="Camera2D/PanelContainer/CanvasLayer"]
 visible = false
-offset_left = 447.0
-offset_top = 2.0
-offset_right = 681.0
-offset_bottom = 181.0
+offset_left = 32.0
+offset_top = 12.0
+offset_right = 219.0
+offset_bottom = 95.0
+theme = SubResource("Theme_0odxb")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_82xsv")
-theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/normal_font_size = 30
 
 [node name="新手教程" type="Sprite2D" parent="Camera2D/PanelContainer/CanvasLayer"]
 position = Vector2(904, 460)
@@ -5707,6 +5705,15 @@ text = "图例解释：
 position = Vector2(385.8, 129.635)
 scale = Vector2(0.195, 0.195)
 
+[node name="距离" type="Label" parent="Camera2D/PanelContainer/CanvasLayer"]
+offset_left = 884.0
+offset_top = 17.0
+offset_right = 1076.0
+offset_bottom = 98.0
+theme = SubResource("Theme_1u8w0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
 [node name="ColorRect" type="ColorRect" parent="Camera2D/PanelContainer"]
 layout_mode = 2
 color = Color(1, 1, 1, 0.482353)
@@ -5736,8 +5743,6 @@ stream = SubResource("AudioStreamRandomizer_ryguw")
 [connection signal="button_up" from="background/player/Button3" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_3_button_up"]
 [connection signal="button_up" from="background/player/Button4" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_4_button_up"]
 [connection signal="button_up" from="background/player/Button5" to="Camera2D/PanelContainer/CanvasLayer" method="_on_button_5_button_up"]
-[connection signal="button_down" from="background/player/Test1" to="background/TileMapLayer" method="_on_test_1_button_down"]
-[connection signal="button_down" from="background/player/Test2" to="background/TileMapLayer" method="_on_test_2_button_down"]
 [connection signal="gui_input" from="Camera2D/PanelContainer/CanvasLayer/Label" to="Camera2D/PanelContainer/CanvasLayer" method="_on_label_gui_input"]
 [connection signal="card_played_1" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_1"]
 [connection signal="card_played_2" from="Camera2D/PanelContainer/CanvasLayer/Card manager" to="background/TileMapLayer" method="_on_card_manager_card_played_2"]

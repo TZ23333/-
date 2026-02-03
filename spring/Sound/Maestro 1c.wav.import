@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d4ip04tr7qof7"
-path="res://.godot/imported/Maestro 1c.wav-0745825c784d41f284b476b3cd97fcd9.sample"
+path="res://.godot/imported/Maestro 1c.wav-cc79b705af2ffaf6e60da1b1173f9ea7.sample"
 
 [deps]
 
-source_file="res://Sound/Maestro 1c.wav"
-dest_files=["res://.godot/imported/Maestro 1c.wav-0745825c784d41f284b476b3cd97fcd9.sample"]
+source_file="res://spring/Sound/Maestro 1c.wav"
+dest_files=["res://.godot/imported/Maestro 1c.wav-cc79b705af2ffaf6e60da1b1173f9ea7.sample"]
 
 [params]
 

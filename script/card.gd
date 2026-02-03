@@ -110,8 +110,8 @@ func _on_button_button_up() -> void:
 	table_zone = get_node("/root/main/Camera2D/PanelContainer/CanvasLayer/CardZones/TableZone")
 	if is_point_in_rect_area(mpos,table_zone):
 		var emotion_sign = Infos.card_emotion.get(self.get_card_type())
-		if abs(emotion_sign-Emotional.emotion_changeTo) == 2 or abs(emotion_sign-Emotional.emotion_changeTo) == 0:
-			handle_invalid_drop()
+		if abs(emotion_sign-Emotional.emotion_changeTo) in [0,2] and Infos.is_limit:
+				handle_invalid_drop()
 		else:
 			Infos.is_card_discarded = true
 			if Infos.selected_card_id == 0 or Infos.selected_card_id%2 == 0:

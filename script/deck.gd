@@ -139,6 +139,22 @@ func is_double(c:card)-> void:
 		is_first = true
 	if first_discard == second_discard:
 		draw_card(1)
+		match first_discard:
+			"喜":
+				$"../../../../background/TileMapLayer".check_distance("+")
+			"怒":
+				Infos.is_limit = false
+			"哀":
+				draw_card(1)
+			"惧":
+				var i:int = randi_range(0,2)
+				match i:
+					0:
+						$"../../../../background/TileMapLayer".check_distance("+")
+					1:
+						Infos.is_limit = false
+					2:
+						draw_card(1)
 		first_discard = ""
 		second_discard = ""
 		is_first = true

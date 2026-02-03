@@ -94,13 +94,6 @@ func update_ui():
 		ui.update_turn_display(current_turn)
 		
 func _input(event):
-	if event.is_action_pressed("draw_card"):
-		#测试：按D键抽牌
-		if card_manager.draw_card(1):
-			var last_index = card_manager.hand_instance_ids.size()-1
-			var instance_id = card_manager.hand_instance_ids[last_index]
-			card_display.initialize_from_instance(instance_id)
-			
 	if event.is_action_pressed("next_turn"):
 			#测试：按N键结束回合
 			end_current_turn()
@@ -108,6 +101,8 @@ func _input(event):
 func end_current_turn():
 	print("第",current_turn,"回合结束")
 	Infos.doom_time -= 1
+	Infos.move_distance = 1
+	Infos.is_limit = true
 	match Emotional.emotion_changeTo+1:
 		0:
 			load_image("喜")

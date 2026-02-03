@@ -19,6 +19,7 @@ var DILOGS : Resource
 @onready var control_2: Control = $"../../../background/player/Control2"
 @onready var control_3: Control = $"../../../background/player/Control3"
 @onready var control_4: Control = $"../../../background/player/Control4"
+@onready var 距离: Label = $距离
 
 
 # Called when the node enters the scene tree for the first time.
@@ -139,5 +140,6 @@ func _on_button_button_up() -> void:
 	doomtime.visible = true
 	ui_ing.emit(true)
 	ui_time = true
+	距离.text = "移动距离：" + str(Infos.move_distance)
 	DILOGS = load("res://resource/5_dilogs.tres")
 	pass # Replace with function body.

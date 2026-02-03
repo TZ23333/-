@@ -8,6 +8,7 @@ const PLLLLAYER = preload("res://scenc/pllllayer.tscn")
 @onready var label: Label = $"../player/Label"
 @onready var canvas_layer: CanvasLayer = $"../../Camera2D/PanelContainer/CanvasLayer"
 @onready var walk_sound: AudioStreamPlayer = $walk_sound
+@onready var 距离: Label = $"../../Camera2D/PanelContainer/CanvasLayer/距离"
 
 signal happy_trigger
 signal sad_trigger
@@ -23,7 +24,6 @@ const scare_tile_coords_b:Vector2i = Vector2i(33,38)
 var new_tile_coords:Vector2i
 var old_tile_coords:Vector2i
 
-var move_distance:int = 1
 
 var moveing := Vector2i.ZERO
 var mos = 3
@@ -76,7 +76,7 @@ func moveto(usedcell:Array[Vector2i],event:InputEvent):
 	var ab = self.get_cell_tile_data(cell)
 	if ab.get_custom_data("able"):
 		var moll = cell - self.local_to_map(player.position)
-		if moll.length() > move_distance:
+		if moll.length() > Infos.move_distance:
 			pllllayer.hide()
 			moveing = Vector2i.ZERO
 			return
@@ -142,8 +142,12 @@ func _process(delta: float) -> void:
 		camera_2d.global_position = player.global_position
 	if mos <= 0:
 		mos = 0
-	if move_distance <=1:
-		move_distance = 1
+	if Infos.move_distance <=1:
+		Infos.move_distance = 1
+	if Input.is_action_just_pressed("加距离"):
+		check_distance("+")
+	if Input.is_action_just_pressed("减距离"):
+		check_distance("-")
 	pass
 
 func _on_card_manager_card_played_2() -> void:
@@ -160,11 +164,10 @@ func _on_card_manager_card_played_1() -> void:
 	mos += 1
 	pass # Replace with function body.
 
-func _on_test_1_button_down() -> void:
-	move_distance += 1
-	pass # Replace with function body.
-
-
-func _on_test_2_button_down() -> void:
-	move_distance -= 1
-	pass # Replace with function body.
+func check_distance(c):
+	match c:
+		"+":
+			Infos.move_distance += 1
+		"-":
+			Infos.move_distance -= 1
+	距离.text = "移动距离：" + str(Infos.move_distance)

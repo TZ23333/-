@@ -9,8 +9,6 @@ extends Node2D
 @onready var panel_container: PanelContainer = $Camera2D/PanelContainer/CanvasLayer/PanelContainer
 @onready var label: Label = $Camera2D/PanelContainer/CanvasLayer/Label
 @onready var camera_2d: Camera2D = $Camera2D
-@onready var test_1: Button = $background/player/Test1
-@onready var test_2: Button = $background/player/Test2
 @onready var bgm: AudioStreamPlayer2D = $BGM
 @onready var control: Control = $background/player/Control
 @onready var control_2: Control = $background/player/Control2
@@ -18,6 +16,8 @@ extends Node2D
 @onready var control_3: Control = $background/player/Control3
 @onready var canvas_layer: CanvasLayer = $Camera2D/PanelContainer/CanvasLayer
 @onready var 情绪状态: Sprite2D = $Camera2D/PanelContainer/CanvasLayer/情绪状态
+@onready var 距离: Label = $Camera2D/PanelContainer/CanvasLayer/距离
+
 
 signal moveing(usedcell : Array[Vector2i],chik : InputEvent)
 signal talk(chik : InputEvent)
@@ -34,9 +34,6 @@ func _ready() -> void:
 	panel_container.visible = false
 	label.visible = false
 	camera_2d.zoom = Vector2(5,5)
-	test_1.visible = false
-	test_2.visible = false
-	doomtime.visible = false
 	情绪状态.visible = false
 	for cell in tile_map_layer.get_used_cells():
 		if tile_map_layer.get_cell_tile_data(cell).get_custom_data("able"):
@@ -46,7 +43,7 @@ func _ready() -> void:
 			#self.add_child(co)
 			
 	player.global_position = tile_map_layer.map_to_local(Used_Cell[0])
-	
+	距离.visible = false
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
@@ -60,6 +57,7 @@ func _process(delta: float) -> void:
 	control_2.global_position = player.global_position + Vector2(Vector2i(42,0)-now_position).normalized() * 10
 	control_3.global_position = player.global_position + Vector2(Vector2i(26,3)-now_position).normalized() * 10
 	control_4.global_position = player.global_position + Vector2(Vector2i(26,24)-now_position).normalized() * 10
+	距离.text = "移动距离：" + str(Infos.move_distance)
 	if now_position == Vector2i(12,0):
 		$background/player/Button2.show()
 		$background/player/Button2.global_position = $background/player.global_position
@@ -116,6 +114,7 @@ func _on_button_button_up() -> void:
 	doomtime.visible = true
 	情绪状态.visible = true
 	bgm.play()
+	距离.visible = true
 	pass # Replace with function body.
 
 

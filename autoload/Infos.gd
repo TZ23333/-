@@ -11,7 +11,8 @@ var card_emotion:Dictionary = {
 var doom_time = 15
 var is_turn_end = false
 var vectory_sign: int = 0
-
+var move_distance:int = 1
+var is_limit:bool  = true
 func add_new_card(cardName,carddesk,caller=get_tree().get_first_node_in_group("cardDeck"))->Node:
 	print("开始创建新卡牌："+str(cardName))
 	var cardClass = Info.infosDic[cardName]["base_cardclass"]
